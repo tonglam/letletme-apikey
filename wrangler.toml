@@ -1,0 +1,16 @@
+name = "letletme-apikey"
+main = "worker.js"
+compatibility_date = "2023-10-30"
+
+[triggers]
+crons = ["0 0 * * *"] # Run daily at midnight
+
+[vars]
+# Environment variables go here
+APPS = "test-app"
+WEBHOOK_URL = "http://localhost:3000/webhook"
+API_TOKEN = "test-token"
+
+[[kv_namespaces]]
+binding = "API_KEYS"
+id = "8e70e3ccd79f4fd29c58dd9e511b8783" 
