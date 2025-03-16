@@ -48,7 +48,7 @@ fetch_new_key() {
     local response=$(curl -s \
         -H "Authorization: Bearer $CF_API_TOKEN" \
         -H "Content-Type: application/json" \
-        "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces/$CF_NAMESPACE_ID/values/$APP_NAME")
+        "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/storage/kv/namespaces/$CF_NAMESPACE_ID/values/${APP_NAME}_key")
     
     # Check if response is valid JSON
     if ! echo "$response" | jq -e . >/dev/null 2>&1; then

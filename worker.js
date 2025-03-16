@@ -6,7 +6,7 @@ export default {
       try {
         const newKey = generateApiKey();
         await Promise.all([
-          env.API_KEYS.put(app, newKey),
+          env.API_KEYS.put(`${app}_key`, newKey),
           env.API_KEYS.put(`${app}_last_rotated`, new Date().toISOString()),
         ]);
         console.log(`[${app}] API key rotated successfully.`);
