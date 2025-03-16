@@ -31,7 +31,7 @@ test_api_key() {
     
     echo "Testing API key..."
     local status_code=$(curl -s -o /dev/null -w "%{http_code}" \
-        -H "Authorization: Bearer $key" \
+        -H "X-API-Key: $key" \
         "$API_URL")
     
     if [ "$status_code" = "200" ]; then
