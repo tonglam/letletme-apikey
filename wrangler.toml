@@ -1,16 +1,28 @@
 name = "letletme-apikey"
 main = "worker.js"
-compatibility_date = "2023-10-30"
+compatibility_date = "2024-03-16"
+compatibility_flags = ["nodejs_compat"]
 
+# Development mode settings
+[dev]
+port = 8787
+local_protocol = "http"
+ip = "127.0.0.1"
+
+# Logging and observability
+[observability.logs]
+enabled = true
+
+# Cron Triggers
 [triggers]
 crons = ["0 0 * * *"] # Run daily at midnight
 
+# Environment variables
 [vars]
-# Environment variables go here
-APPS = "test-app"
-WEBHOOK_URL = "http://localhost:3000/webhook"
-API_TOKEN = "test-token"
+APPS = "website,wechat"
 
+# KV namespace configuration
 [[kv_namespaces]]
 binding = "API_KEYS"
-id = "8e70e3ccd79f4fd29c58dd9e511b8783" 
+id = "777f161ef5154d92830bd568fc9fc9e1"
+preview_id = "777f161ef5154d92830bd568fc9fc9e1" 
